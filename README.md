@@ -1,4 +1,3 @@
-# Listas_Tuplas_Diccionarios_Python
 print('***Miscelanea de ejercicios python***')
 print('Ejercicio de listas y tuplas 3. Actividad')
 #Suma de elementos: Escribe una función que tome una lista de números como entrada y devuelva la suma de todos los elementos de la lista.
@@ -112,8 +111,47 @@ def Buscar_índices():
   print(lista)
   nueva_lista=list(zip(tupla,lista))
   print(nueva_lista)
+  
+def Separar_elementos():
+  lista=input('Ingrese una cadena de palabras a la tupla: ') 
+  lista=[lista]
+  tupla = tuple(lista)
+  print(tupla)
+  lista=tupla
+  
+  for palabra in lista:
+    if lista[0].lower()=='a':
+      print(palabra)
+    elif lista[0].lower()!='a':
+      print(palabra)
 
-seleccion=(input('Ejercicios de la actividad 4\n 01. Suma de elementos\n 02. Promedio de valores\n 03. Eliminacion de duplicados\n 04. Ordenar lista\n 05. Palabra mas larga\n 06. Producto de elementos\n 07. Mayor y menor elemento\n 08. Contar ocurrencias\n 09. Buscar indices\n 99. Para salir ___________\n Ejercicio a desarrollar: '))
+def contar_palabras():
+  frase=input('Escribe una frase: ')
+  #Para quitar los caracteres que no se van a utilizar para la realizacion del conteo.
+  quitar = ",;:\n'"
+  for caracter in quitar:
+    frase=frase.replace(caracter," ")
+  #lo primero es convertir la frase por si tiene palabras en mayuscula con el comando 'texto.lower'
+  frase=frase.lower()  
+  #Con la siguiente funcion limpiamo las palabras para poder generar el conteo
+  palabras=frase.split(" ")
+  #ahora contadoremos la cantidad de palabras que se encuentren durante la frase por medio de un dicionario.
+  diccionario_frecuencia={}
+  for palabra in palabras:
+    if palabra in diccionario_frecuencia:
+     diccionario_frecuencia[palabra]+=1
+    else:
+      diccionario_frecuencia[palabra] = 1
+  for palabra in diccionario_frecuencia:
+    frecuencia=diccionario_frecuencia[palabra]
+    print(f'La palabra: "{palabra}" tiene una frecuencia de: {frecuencia}')
+
+  
+  
+  
+  
+  
+seleccion=(input('Ejercicios de la actividad 4\n 01. Suma de elementos\n 02. Promedio de valores\n 03. Eliminacion de duplicados\n 04. Ordenar lista\n 05. Palabra mas larga\n 06. Producto de elementos\n 07. Mayor y menor elemento\n 08. Contar ocurrencias\n 09. Buscar indices\n 10.Escribe una función que tome una tupla de cadenas como entrada y devuelva dos tuplas separadas: una con todas las cadenas que empiezan con una vocal y otra con las que no.\n 11. Escribe una función que tome una lista de palabras como entrada y devuelva un diccionario que cuente cuántas veces aparece cada palabra en la lista.\n 99. Para salir ___________\n Ejercicio a desarrollar: '))
 
 while seleccion!= '99':
   if seleccion == '01':
@@ -134,11 +172,11 @@ while seleccion!= '99':
     Contar_ocurrencias()
   elif seleccion =='09':
     Buscar_índices()
+  elif seleccion =='10':
+    Separar_elementos()
+  elif seleccion =='11':
+    contar_palabras()
   else:
     print('Seleccion incorrecta')     
-  selccion=(input('Ejercicios de la actividad 4\n 01. Suma de elementos\n 02. Promedio de valores\n 03. Eliminacion de duplicados\n 04. Ordenar lista\n 05. Palabra mas larga\n 06. Producto de elementos\n 07. Mayor y menor elemento\n 08. Contar ocurrencias\n 09. Buscar indices\n 99. Para salir___________\n Ejercicio a desarrollar: '))
+  selccion=(input('Ejercicios de la actividad 4\n 01. Suma de elementos\n 02. Promedio de valores\n 03. Eliminacion de duplicados\n 04. Ordenar lista\n 05. Palabra mas larga\n 06. Producto de elementos\n 07. Mayor y menor elemento\n 08. Contar ocurrencias\n 09. Buscar indices\n 99. 10.Escribe una función que tome una tupla de cadenas como entrada y devuelva dos tuplas separadas: una con todas las cadenas que empiezan con una vocal y otra con las que no.\n 11. Escribe una función que tome una lista de palabras como entrada y devuelva un diccionario que cuente cuántas veces aparece cada palabra en la lista. \n Para salir___________\n Ejercicio a desarrollar: '))
   print('Finalizado el programa')
- 
-    
-  
-    
